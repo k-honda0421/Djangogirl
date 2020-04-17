@@ -1,26 +1,11 @@
-<html>
-    <head>
-        {% comment %} タイトルバーの見出し {% endcomment %}
-        <title>Django Grils blog</title>
-    </head>
-    <body>
-        <div>
-            {% comment %}最も重要性の高い見出し{% endcomment %}
-            <h1><a href="/">Django Girls blog</a></h1>
-        </div>
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            {% comment %} h1の次のレベルの見出し {% endcomment %}
-            {% comment %} a=hrefはハイパーリンク {% endcomment %}
-            <h2><a href="">My firstpost</a></h2>
-            <p>Aeneun eu leo quam. こんにちは！　よろしくお願いします！</p>
-        </div>
-
-        <div>
-            <p>公開日: 2014/06/14, 12:14</p>
-            <h2><a href="">2番目の投稿</a></h2>
-            <p>こんにちは！よろしくお願いします！</p>
-        </div>
-    </body>
-</html>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
