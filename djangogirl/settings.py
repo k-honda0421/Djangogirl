@@ -120,3 +120,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# ログインしたらトップページへ遷移
+LOGIN_REDIRECT_URL='/'
